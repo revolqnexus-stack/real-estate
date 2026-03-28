@@ -15,6 +15,7 @@
   --line2:   rgba(26, 24, 20, 0.06);
   --overlay: rgba(10, 8, 6, 0.42);
   --gold:    #C4A96B;
+  --ease-lux: cubic-bezier(0.21, 0.6, 0.35, 1);
 }
 
 @theme inline {
@@ -85,10 +86,10 @@ input, textarea, select {
 
 .t-display {
   font-family: var(--font-serif), serif;
-  font-size: clamp(3rem, 6vw, 6rem);
+  font-size: clamp(4rem, 8vw, 8rem);
   font-weight: 300;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
   color: var(--ink);
 }
 
@@ -118,9 +119,9 @@ input, textarea, select {
 
 .t-label {
   font-family: var(--font-sans), sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 200;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.4em;
   text-transform: uppercase;
   color: var(--muted);
 }

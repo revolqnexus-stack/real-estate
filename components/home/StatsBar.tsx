@@ -15,9 +15,8 @@ const STATS = [
 export default function StatsBar() {
   return (
     <section
-      className="px-6 md:px-12 py-10 grid grid-cols-2 md:grid-cols-4"
+      className="px-6 md:px-[10vw] lg:px-[15vw] py-16 grid grid-cols-2 lg:grid-cols-4 gap-y-12"
       style={{
-        borderTop: '1px solid var(--line)',
         borderBottom: '1px solid var(--line)',
       }}
     >

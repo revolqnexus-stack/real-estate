@@ -3,7 +3,6 @@ import { type Metadata } from 'next';
 import Link from 'next/link';
 import { PROPERTIES, getPropertyBySlug, getAllPropertySlugs } from '@/lib/properties';
 import PropertyHero from '@/components/property/PropertyHero';
-import Breadcrumb from '@/components/shared/Breadcrumb';
 import PropertySpecs from '@/components/property/PropertySpecs';
 import PropertyGallery from '@/components/property/PropertyGallery';
 import PropertyMap from '@/components/property/PropertyMap';
@@ -48,25 +47,33 @@ export default async function PropertyPage({ params }: Props) {
     <>
       <PropertyHero property={property} />
 
-      <Breadcrumb
-        items={[
-          { label: 'Properties', href: '/properties' },
-          { label: property.title },
-        ]}
-      />
+      {/* Breadcrumb replacement — sleek back link */}
+      <section className="px-6 md:px-[10vw] lg:px-[15vw] pt-12">
+        <Link href="/properties" className="t-label group flex items-center gap-4" style={{ color: 'var(--ink)' }}>
+          <span className="transition-transform duration-300 group-hover:-translate-x-2">←</span>
+          BACK TO PORTFOLIO
+        </Link>
+      </section>
 
-      {/* Details Section */}
-      <section className="px-6 md:px-12 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-24">
-          {/* Left — Specs (sticky on desktop) */}
+      {/* Asymmetrical Details Layout */}
+      <section className="px-6 md:px-[10vw] lg:px-[15vw] py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-20">
+          
+          {/* Left Column: Numbered Anchor & Price */}
           <div className="lg:sticky lg:top-[120px] lg:self-start">
+            <TextReveal>
+              <p className="t-label mb-12" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>
+                01 ✧ DETAILS
+              </p>
+            </TextReveal>
+            
             <PropertySpecs property={property} />
 
-            <div className="mt-10">
-              <p className="t-label mb-3" style={{ letterSpacing: '0.4em' }}>Price</p>
-              <p className="t-price" style={{ fontSize: '2.5rem' }}>{property.price}</p>
+            <div className="mt-16 pt-12" style={{ borderTop: '1px solid var(--line)' }}>
+              <p className="t-label mb-4" style={{ letterSpacing: '0.4em' }}>VALUATION</p>
+              <p className="t-price" style={{ fontSize: '3rem', color: 'var(--ink)', lineHeight: 1 }}>{property.price}</p>
               {property.priceNote && (
-                <p style={{ fontFamily: 'var(--font-serif), serif', fontSize: '0.75rem', color: 'var(--dim)', marginTop: '0.25rem' }}>
+                <p style={{ fontFamily: 'var(--font-serif), serif', fontStyle: 'italic', fontSize: '0.85rem', color: 'var(--muted)', marginTop: '0.5rem' }}>
                   {property.priceNote}
                 </p>
               )}
@@ -75,63 +82,81 @@ export default async function PropertyPage({ params }: Props) {
             <EnquireButton />
           </div>
 
-          {/* Right — Description, Highlights, Amenities */}
-          <div>
+          {/* Right Column: Flowing Description */}
+          <div className="pt-2">
             <TextReveal>
-              <p className="t-body" style={{ fontSize: '1.05rem', lineHeight: 1.9, marginBottom: '3rem' }}>
+              <p 
+                style={{ 
+                  fontFamily: 'var(--font-serif), serif', 
+                  fontSize: '1.25rem', 
+                  lineHeight: 1.85, 
+                  fontWeight: 300, 
+                  color: 'var(--ink)',
+                  marginBottom: '5rem' 
+                }}
+              >
                 {property.fullDescription}
               </p>
             </TextReveal>
 
             {/* Highlights */}
-            <TextReveal delay={0.1}>
-              <div className="mb-12">
-                <p className="t-label mb-6" style={{ letterSpacing: '0.4em' }}>Key Highlights</p>
-                <div className="flex flex-col">
-                  {property.highlights.map((h) => (
+            <div className="mb-20">
+              <TextReveal>
+                <p className="t-label mb-8" style={{ letterSpacing: '0.4em' }}>
+                  02 ✧ HIGHLIGHTS
+                </p>
+              </TextReveal>
+              <div className="flex flex-col">
+                {property.highlights.map((h, i) => (
+                  <TextReveal key={h} delay={i * 0.05}>
                     <p
-                      key={h}
-                      className="py-3"
+                      className="py-5"
                       style={{
                         fontFamily: 'var(--font-serif), serif',
                         fontWeight: 300,
-                        fontSize: '1rem',
-                        color: 'var(--ink)',
+                        fontSize: '1.1rem',
+                        color: 'var(--muted)',
                         borderBottom: '1px solid var(--line2)',
+                        display: 'flex',
+                        gap: '1.5rem'
                       }}
                     >
-                      → {h}
+                      <span className="t-label" style={{ opacity: 0.5 }}>0{i + 1}</span>
+                      {h}
                     </p>
-                  ))}
-                </div>
+                  </TextReveal>
+                ))}
               </div>
-            </TextReveal>
+            </div>
 
             {/* Amenities */}
-            <TextReveal delay={0.15}>
-              <div>
-                <p className="t-label mb-6" style={{ letterSpacing: '0.4em' }}>Amenities</p>
-                <div className="flex flex-wrap gap-3">
-                  {property.amenities.map((a) => (
+            <div>
+              <TextReveal>
+                <p className="t-label mb-8" style={{ letterSpacing: '0.4em' }}>
+                  03 ✧ AMENITIES
+                </p>
+              </TextReveal>
+              <div className="flex flex-wrap gap-4">
+                {property.amenities.map((a, i) => (
+                  <TextReveal key={a} delay={i * 0.05}>
                     <span
-                      key={a}
-                      className="px-4 py-2"
+                      className="px-5 py-3"
                       style={{
                         border: '1px solid var(--line)',
                         fontFamily: 'var(--font-sans), sans-serif',
                         fontWeight: 200,
-                        fontSize: '0.65rem',
-                        letterSpacing: '0.15em',
+                        fontSize: '0.62rem',
+                        letterSpacing: '0.2em',
                         textTransform: 'uppercase',
-                        color: 'var(--muted)',
+                        color: 'var(--ink)',
                       }}
                     >
                       {a}
                     </span>
-                  ))}
-                </div>
+                  </TextReveal>
+                ))}
               </div>
-            </TextReveal>
+            </div>
           </div>
         </div>
       </section>
@@ -140,50 +165,50 @@ export default async function PropertyPage({ params }: Props) {
       <PropertyMap district={property.district} location={property.location} />
       <PropertyEnquiry propertyName={property.title} />
 
-      {/* Next/Prev Navigation */}
+      {/* Cinematic Next/Prev */}
       <section
-        className="px-6 md:px-12 py-12 flex justify-between items-start"
+        className="px-6 md:px-[10vw] lg:px-[15vw] py-24 flex flex-col md:flex-row justify-between items-start md:items-center gap-10"
         style={{ borderTop: '1px solid var(--line)' }}
       >
         {prevProperty ? (
-          <Link href={`/properties/${prevProperty.slug}`} className="group">
-            <p className="t-label" style={{ fontSize: '0.6rem', letterSpacing: '0.3em', color: 'var(--dim)' }}>
-              ← Previous Property
+          <Link href={`/properties/${prevProperty.slug}`} className="group block w-full md:w-1/2">
+            <p className="t-label mb-4" style={{ fontSize: '0.6rem', letterSpacing: '0.3em', color: 'var(--muted)' }}>
+              ← PREVIOUS
             </p>
             <p
-              className="mt-2 transition-colors duration-200 group-hover:text-ink"
+              className="transition-colors duration-400 group-hover:text-muted"
               style={{
                 fontFamily: 'var(--font-serif), serif',
-                fontStyle: 'italic',
                 fontWeight: 300,
-                fontSize: '1.2rem',
-                color: 'var(--muted)',
+                fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                color: 'var(--ink)',
+                lineHeight: 1.1
               }}
             >
               {prevProperty.title}
             </p>
           </Link>
-        ) : <div />}
+        ) : <div className="w-full md:w-1/2" />}
 
         {nextProperty ? (
-          <Link href={`/properties/${nextProperty.slug}`} className="group text-right">
-            <p className="t-label" style={{ fontSize: '0.6rem', letterSpacing: '0.3em', color: 'var(--dim)' }}>
-              Next Property →
+          <Link href={`/properties/${nextProperty.slug}`} className="group block w-full md:w-1/2 text-left md:text-right">
+            <p className="t-label mb-4" style={{ fontSize: '0.6rem', letterSpacing: '0.3em', color: 'var(--muted)' }}>
+              NEXT →
             </p>
             <p
-              className="mt-2 transition-colors duration-200 group-hover:text-ink"
+              className="transition-colors duration-400 group-hover:text-muted"
               style={{
                 fontFamily: 'var(--font-serif), serif',
-                fontStyle: 'italic',
                 fontWeight: 300,
-                fontSize: '1.2rem',
-                color: 'var(--muted)',
+                fontSize: 'clamp(1.5rem, 3vw, 2.5rem)',
+                color: 'var(--ink)',
+                lineHeight: 1.1
               }}
             >
               {nextProperty.title}
             </p>
           </Link>
-        ) : <div />}
+        ) : <div className="w-full md:w-1/2" />}
       </section>
     </>
   );

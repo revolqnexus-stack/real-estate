@@ -10,7 +10,7 @@ import { JOURNAL_POSTS } from '@/lib/journal';
  */
 export default function JournalPreview() {
   return (
-    <section className="px-6 md:px-12 py-24">
+    <section className="px-6 md:px-[10vw] lg:px-[15vw] py-32">
       <div className="flex justify-between items-baseline mb-16">
         <div>
           <TextReveal>

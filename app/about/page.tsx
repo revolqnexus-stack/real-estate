@@ -14,73 +14,90 @@ const TEAM = [
 ] as const;
 
 const VALUES = [
-  { title: 'Discretion', body: 'Every transaction handled with complete confidentiality. Your privacy is non-negotiable.' },
-  { title: 'Integrity', body: 'We represent the property honestly. Always. No embellishments, no omissions.' },
-  { title: 'Patience', body: 'The right property is worth waiting for. We never rush a decision that shapes your life.' },
+  { title: '01 ✧ Discretion', body: 'Every transaction handled with complete confidentiality. Your privacy is non-negotiable.' },
+  { title: '02 ✧ Integrity', body: 'We represent the property honestly. Always. No embellishments, no omissions.' },
+  { title: '03 ✧ Patience', body: 'The right property is worth waiting for. We never rush a decision that shapes your life.' },
 ] as const;
 
 const STATS = [
-  { number: '2018', label: 'Founded' },
-  { number: '120+', label: 'Families Served' },
-  { number: '8', label: 'Kerala Districts' },
-  { number: '₹200Cr+', label: 'Portfolio Value' },
+  { number: '2018', label: '01 ✧ Founded' },
+  { number: '120+', label: '02 ✧ Families Served' },
+  { number: '8', label: '03 ✧ Kerala Districts' },
+  { number: '₹200Cr+', label: '04 ✧ Portfolio Value' },
 ] as const;
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative px-6 md:px-12 overflow-hidden" style={{ paddingTop: '22vh', paddingBottom: '5rem' }}>
-        <TextReveal>
-          <p className="t-label mb-4" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>About Us</p>
-        </TextReveal>
-        <TextReveal delay={0.1}>
-          <h1 className="t-heading">
-            We find homes that <em>feel inevitable.</em>
-          </h1>
-        </TextReveal>
-        <TextReveal delay={0.2}>
-          <p className="t-body mt-6" style={{ maxWidth: '500px', fontSize: '1.1rem' }}>
-            Landmark Estates has been connecting families with exceptional properties across Kerala since 2018.
-          </p>
-        </TextReveal>
+      <section className="relative px-6 md:px-[10vw] lg:px-[15vw] overflow-hidden" style={{ paddingTop: '22vh', paddingBottom: '6rem' }}>
+        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+          <div className="w-full lg:w-2/3">
+            <TextReveal>
+              <p className="t-label mb-8" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>
+                01 ✧ ABOUT US
+              </p>
+            </TextReveal>
+            <TextReveal delay={0.1}>
+              <h1 className="t-display" style={{ fontSize: 'clamp(3.5rem, 7vw, 7rem)' }}>
+                We find homes that <em>feel inevitable.</em>
+              </h1>
+            </TextReveal>
+          </div>
+          <div className="w-full lg:w-1/3 pt-4">
+            <TextReveal delay={0.15}>
+              <p
+                style={{
+                  fontFamily: 'var(--font-serif), serif',
+                  fontWeight: 300,
+                  fontSize: '1.1rem',
+                  lineHeight: 1.8,
+                  color: 'var(--muted)',
+                  borderLeft: '1px solid var(--line)',
+                  paddingLeft: '2rem'
+                }}
+              >
+                Landmark Estates has been connecting families with exceptional properties across Kerala since 2018.
+              </p>
+            </TextReveal>
+          </div>
+        </div>
       </section>
 
       {/* Story Section */}
-      <section className="px-6 md:px-12 py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-16 lg:gap-24">
+      <section className="px-6 md:px-[10vw] lg:px-[15vw] py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-20 lg:gap-32">
           <TextReveal>
             <div
               style={{
                 fontFamily: 'var(--font-serif), serif',
                 fontWeight: 300,
-                fontSize: 'clamp(1.1rem, 1.4vw, 1.3rem)',
-                lineHeight: 1.9,
-                color: 'var(--muted)',
-                maxWidth: '520px',
+                fontSize: 'clamp(1.2rem, 1.5vw, 1.5rem)',
+                lineHeight: 1.8,
+                color: 'var(--ink)',
               }}
             >
               <p>
                 We believe the right property is not found — it is recognised.
                 It is the one that, the moment you enter, you understand.
               </p>
-              <p className="mt-6">
+              <p className="mt-8 text-muted">
                 Our work is to ensure you arrive at that recognition.
               </p>
-              <p className="mt-6">
+              <p className="mt-8 text-muted" style={{ fontStyle: 'italic' }}>
                 Not to sell you something. To help you find it.
               </p>
             </div>
           </TextReveal>
 
-          <div className="flex flex-col gap-0">
+          <div className="flex flex-col gap-0 pt-4">
             {STATS.map((stat, i) => (
               <TextReveal key={stat.label} delay={i * 0.08}>
-                <div className="py-6" style={{ borderBottom: '1px solid var(--line)' }}>
-                  <p style={{ fontFamily: 'var(--font-serif), serif', fontWeight: 300, fontSize: '3rem', color: 'var(--ink)', lineHeight: 1 }}>
+                <div className="py-6 flex justify-between items-end" style={{ borderBottom: '1px solid var(--line2)' }}>
+                  <p className="t-label" style={{ fontSize: '0.62rem', letterSpacing: '0.3em' }}>{stat.label}</p>
+                  <p style={{ fontFamily: 'var(--font-serif), serif', fontWeight: 300, fontSize: '2.5rem', color: 'var(--ink)', lineHeight: 1 }}>
                     {stat.number}
                   </p>
-                  <p className="t-label mt-2" style={{ fontSize: '0.62rem' }}>{stat.label}</p>
                 </div>
               </TextReveal>
             ))}
@@ -89,28 +106,31 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="px-6 md:px-12 py-24">
+      <section className="px-6 md:px-[10vw] lg:px-[15vw] py-32">
         <TextReveal>
-          <p className="t-label mb-4" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>Our Team</p>
+          <p className="t-label mb-8" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>
+            02 ✧ OUR TEAM
+          </p>
         </TextReveal>
         <TextReveal delay={0.1}>
-          <h2 className="t-heading mb-16">The people behind <em>the properties.</em></h2>
+          <h2 className="t-display mb-20" style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}>The people behind <em>the properties.</em></h2>
         </TextReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {TEAM.map((member, i) => (
             <TextReveal key={member.name} delay={0.15 + i * 0.08}>
               <div>
                 <ImageReveal
                   src={member.image}
                   alt={member.name}
-                  aspectRatio="aspect-[4/5]"
+                  aspectRatio="aspect-[3/4]"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <p className="mt-4" style={{ fontFamily: 'var(--font-serif), serif', fontWeight: 300, fontSize: '1.2rem', color: 'var(--ink)' }}>
+                <p className="mt-6" style={{ fontFamily: 'var(--font-serif), serif', fontWeight: 300, fontSize: '1.4rem', color: 'var(--ink)' }}>
                   {member.name}
                 </p>
-                <p className="t-label mt-1" style={{ fontSize: '0.65rem', letterSpacing: '0.2em' }}>{member.role}</p>
+                <div className="w-8 h-[1px] bg-ink/20 my-3" />
+                <p className="t-label" style={{ fontSize: '0.6rem', letterSpacing: '0.3em' }}>{member.role}</p>
               </div>
             </TextReveal>
           ))}
@@ -118,32 +138,27 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="px-6 md:px-12 py-24" style={{ background: 'var(--warm)' }}>
+      <section className="px-6 md:px-[10vw] lg:px-[15vw] py-32" style={{ background: 'var(--warm)' }}>
         <TextReveal>
-          <p className="t-label mb-16" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>Our Values</p>
+          <p className="t-label mb-20" style={{ letterSpacing: '0.45em', fontSize: '0.62rem', opacity: 0.6 }}>
+            03 ✧ OUR VALUES
+          </p>
         </TextReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {VALUES.map((v, i) => (
             <TextReveal key={v.title} delay={0.1 + i * 0.08}>
-              <div style={{ borderLeft: i > 0 ? '1px solid var(--line)' : 'none', paddingLeft: i > 0 ? '2rem' : '0' }}>
-                <h3 style={{ fontFamily: 'var(--font-serif), serif', fontWeight: 300, fontSize: '1.5rem', color: 'var(--ink)', marginBottom: '0.75rem' }}>
+              <div style={{ borderTop: '1px solid var(--line)', paddingTop: '1.5rem' }}>
+                <p className="t-label mb-8" style={{ fontSize: '0.6rem', letterSpacing: '0.3em', color: 'var(--ink)' }}>
                   {v.title}
-                </h3>
-                <p style={{ fontFamily: 'var(--font-serif), serif', fontWeight: 300, fontSize: '0.92rem', lineHeight: 1.85, color: 'var(--muted)' }}>
+                </p>
+                <p style={{ fontFamily: 'var(--font-serif), serif', fontWeight: 300, fontSize: '1.05rem', lineHeight: 1.85, color: 'var(--muted)' }}>
                   {v.body}
                 </p>
               </div>
             </TextReveal>
           ))}
         </div>
-      </section>
-
-      {/* Recognition */}
-      <section className="px-6 md:px-12 py-16 text-center">
-        <p className="t-label" style={{ fontSize: '0.65rem', letterSpacing: '0.3em', color: 'var(--dim)' }}>
-          Featured in The Hindu · Times Property · Kerala Builder Awards 2023
-        </p>
       </section>
     </>
   );

@@ -1,10 +1,10 @@
 import { type Property } from '@/types/property';
 
 const GALLERY_IMAGES = [
-  'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80',
-  'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=1200&q=80',
+  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=3840&q=90',
+  'https://images.unsplash.com/photo-1600607687939-ce8a6d349c58?auto=format&fit=crop&w=3840&q=90',
+  'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=3840&q=90',
+  'https://images.unsplash.com/photo-1600607684527-6fb886090705?auto=format&fit=crop&w=3840&q=90',
 ] as const;
 
 export const PROPERTIES: Property[] = [
@@ -24,7 +24,7 @@ export const PROPERTIES: Property[] = [
     facing: 'East',
     possession: 'Ready to Move',
     year: '2024',
-    heroImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=3840&q=90',
     gallery: [...GALLERY_IMAGES],
     shortDescription: 'A contemporary masterpiece overlooking the Malabar coast, where modern design meets coastal serenity.',
     fullDescription: 'The Malabar Residences represent the pinnacle of coastal luxury in Calicut. Each residence is designed around light, air, and the unbroken horizon of the Arabian Sea. Floor-to-ceiling glass, cantilevered terraces, and materials sourced from across the subcontinent create spaces that feel both monumental and intimate. These are not just homes — they are addresses that define a generation.',
@@ -49,7 +49,7 @@ export const PROPERTIES: Property[] = [
     facing: 'West',
     possession: 'Ready to Move',
     year: '2023',
-    heroImage: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=3840&q=90',
     gallery: [...GALLERY_IMAGES],
     shortDescription: 'Seaside villas in the heart of Kovalam, designed for those who seek stillness by the shore.',
     fullDescription: 'Seaward Villas occupy one of the most coveted stretches of coastline in Southern Kerala. Each villa draws from traditional Kerala architecture — sloped roofs, laterite walls, open courtyards — while integrating contemporary comforts seamlessly. The sound of the ocean is your constant companion. A place where time moves differently.',
@@ -72,11 +72,11 @@ export const PROPERTIES: Property[] = [
     facing: 'North',
     possession: '2025',
     year: '2025',
-    heroImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=3840&q=90',
     gallery: [...GALLERY_IMAGES],
     shortDescription: 'Elegant urban living in the heart of Kochi, where convenience meets considered design.',
     fullDescription: 'The Rosewood is a residential landmark rising in the most connected neighbourhood of Kochi. Every apartment is a study in proportion — generous ceiling heights, cross-ventilated layouts, and finishes that age with grace. Below, the city pulses. Above, the sky stretches endlessly. This is what elevated living feels like.',
-    amenities: ['Rooftop Garden', 'Sky Lounge', 'Indoor Games', 'High-speed Elevators', 'Children\'s Play Area'],
+    amenities: ['Rooftop Garden', 'Sky Lounge', 'Indoor Games', 'High-speed Elevators', "Children's Play Area"],
     highlights: ['Central Kochi Location', 'Cross-ventilated Layouts', 'Premium Italian Flooring'],
     collections: ['apartments'],
   },
@@ -96,10 +96,10 @@ export const PROPERTIES: Property[] = [
     facing: 'East',
     possession: 'Ready to Move',
     year: '1980',
-    heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=3840&q=90',
     gallery: [...GALLERY_IMAGES],
     shortDescription: 'A majestic heritage estate telling stories of a bygone era through its hand-carved wooden walls.',
-    fullDescription: 'Palliyil Manor is a testament to the grandeur of Kerala\'s architectural past. Built with ancient teak and laterite, the manor features a traditional Nalukettu design with a central courtyard that floods the home with natural light. Each room carries the patina of decades — polished wooden floors, carved doorways, brass fittings. Owning it is not an acquisition. It is a custodianship.',
+    fullDescription: "Palliyil Manor is a testament to the grandeur of Kerala's architectural past. Built with ancient teak and laterite, the manor features a traditional Nalukettu design with a central courtyard that floods the home with natural light. Each room carries the patina of decades — polished wooden floors, carved doorways, brass fittings. Owning it is not an acquisition. It is a custodianship.",
     amenities: ['Traditional Nalukettu Courtyard', 'Ancient Well', 'Guest Wing', 'Extensive Lawns'],
     highlights: ['Heritage Architectural Status', 'Expansive 25-Cent Plot', 'Original Teak Woodwork'],
     collections: ['heritage'],
@@ -119,7 +119,7 @@ export const PROPERTIES: Property[] = [
     facing: 'South',
     possession: '2026',
     year: '2026',
-    heroImage: 'https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6d349c58?auto=format&fit=crop&w=3840&q=90',
     gallery: [...GALLERY_IMAGES],
     shortDescription: 'Terrace villas suspended among the mist-covered tea plantations of Munnar.',
     fullDescription: 'Greenholm Terraces are designed to disappear into the landscape. Each villa steps gently down the hillside, its green roof merging with the surrounding tea estates. Inside, double-height living spaces frame the valley like a painting. In the mornings, mist drifts through. In the evenings, the hills turn gold. This is not a home. It is a vantage point.',
@@ -142,7 +142,7 @@ export const PROPERTIES: Property[] = [
     facing: 'West',
     possession: 'Ready to Move',
     year: '2022',
-    heroImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=3840&q=90',
     gallery: [...GALLERY_IMAGES],
     shortDescription: 'Boutique apartments inspired by the colonial charm and artistic pulse of Fort Kochi.',
     fullDescription: 'In a neighbourhood where Chinese fishing nets silhouette against the sunset and art galleries occupy centuries-old warehouses, The Lighthouse Apartments stand as a bridge between eras. Colonial proportions, contemporary finishes, and a rooftop that faces the harbour. Every evening here is a postcard you get to live inside.',
@@ -162,7 +162,7 @@ export const PROPERTIES: Property[] = [
     area: '12 cents',
     possession: 'Immediate',
     year: '2024',
-    heroImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1600607684527-6fb886090705?auto=format&fit=crop&w=3840&q=90',
     gallery: [...GALLERY_IMAGES],
     shortDescription: 'Premium waterfront plots overlooking the serene backwaters of Alappuzha.',
     fullDescription: 'Varanda Estates is an invitation to build your dream on the water. These gated plots line the legendary backwaters of Alleppey — a landscape of coconut palms, houseboats, and silences that restore the soul. Infrastructure is in place. The canvas is ready. What you build here will become the story your family tells for generations.',
@@ -186,7 +186,7 @@ export const PROPERTIES: Property[] = [
     facing: 'East',
     possession: 'Ready to Move',
     year: '2024',
-    heroImage: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=3840&q=90',
     gallery: [...GALLERY_IMAGES],
     shortDescription: 'Rustic luxury bungalows crafted from authentic teak and stone in the Wayanad highlands.',
     fullDescription: 'The Teakwood Bungalows are where architecture meets the forest. Built from sustainably sourced teak and local stone, each bungalow is a meditation on material and light. The forest canopy is your ceiling. The mountain air is your climate control. A fire pit under the stars, a coffee plantation at your doorstep, silence as a permanent resident.',
@@ -205,7 +205,7 @@ export const PROPERTIES: Property[] = [
     area: '12,000 sq ft',
     possession: 'Ready to Move',
     year: '2023',
-    heroImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=3840&q=90',
     gallery: [...GALLERY_IMAGES],
     shortDescription: 'A premium commercial landmark in Calicut designed for modern businesses and flagship retail.',
     fullDescription: 'Harbour View is not just a commercial space — it is a business address that commands attention. A glass-and-steel facade facing the Kozhikode harbour, column-free floor plates that adapt to any vision, and infrastructure built for the next decade. Whether you are opening a flagship store or establishing a corporate headquarters, this is where ambition finds its address.',
@@ -229,38 +229,33 @@ export const PROPERTIES: Property[] = [
     facing: 'South-West',
     possession: 'Ready to Move',
     year: '2024',
-    heroImage: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=3840&q=90',
     gallery: [...GALLERY_IMAGES],
     shortDescription: 'Ultra-luxury mansions perched on the highest ridgeline of Vagamon, limited to six residences.',
-    fullDescription: 'The Hilltop Collection is the rarest offering in our portfolio. Only six residences exist, each commanding a 30-cent plot on the Vagamon ridgeline. The views are 360 degrees — pine forests, meadows, valleys that stretch to the horizon. Every mansion is custom-designed to reflect its owner\'s vision. Private helipads, temperature-controlled wine cellars, and interiors by leading Kerala architects. This is not luxury. This is legacy.',
+    fullDescription: "The Hilltop Collection is the rarest offering in our portfolio. Only six residences exist, each commanding a 30-cent plot on the Vagamon ridgeline. The views are 360 degrees — pine forests, meadows, valleys that stretch to the horizon. Every mansion is custom-designed to reflect its owner's vision. Private helipads, temperature-controlled wine cellars, and interiors by leading Kerala architects. This is not luxury. This is legacy.",
     amenities: ['Heated Infinity Pool', 'Private Helipad', 'Gourmet Kitchen', 'Wine Cellar', 'Home Theatre'],
     highlights: ['Only 6 Residences in Existence', 'Peak Ridgeline Position', 'Fully Bespoke Interiors'],
     collections: ['luxury', 'villas'],
   },
 ];
 
-/** Get a single property by slug */
 export function getPropertyBySlug(slug: string): Property | undefined {
   return PROPERTIES.find((p) => p.slug === slug);
 }
 
-/** Get all property slugs for static generation */
 export function getAllPropertySlugs(): string[] {
   return PROPERTIES.map((p) => p.slug);
 }
 
-/** Get featured properties */
 export function getFeaturedProperties(): Property[] {
   return PROPERTIES.filter((p) => p.featured);
 }
 
-/** Filter properties by type */
 export function getPropertiesByType(type: string): Property[] {
   if (type === 'all') return PROPERTIES;
   return PROPERTIES.filter((p) => p.type === type);
 }
 
-/** Filter properties by collection */
 export function getPropertiesByCollection(collection: string): Property[] {
   return PROPERTIES.filter((p) => p.collections?.includes(collection));
 }

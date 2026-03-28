@@ -20,39 +20,42 @@ export default function PropertiesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="px-6 md:px-12" style={{ paddingTop: '18vh', paddingBottom: '4rem' }}>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
-          <div>
+      <section className="px-6 md:px-[10vw] lg:px-[15vw]" style={{ paddingTop: '22vh', paddingBottom: '6rem' }}>
+        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+          <div className="w-full lg:w-2/3">
             <TextReveal>
-              <p className="t-label mb-4" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>
-                All Properties
+              <p className="t-label mb-8" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>
+                01 ✧ PORTFOLIO
               </p>
             </TextReveal>
             <TextReveal delay={0.1}>
-              <h1 className="t-heading">
+              <h1 className="t-display" style={{ fontSize: 'clamp(3.5rem, 7vw, 7rem)' }}>
                 {PROPERTIES.length} exceptional <em>properties.</em>
               </h1>
             </TextReveal>
           </div>
-          <TextReveal delay={0.15}>
-            <p
-              className="md:text-right"
-              style={{
-                fontFamily: 'var(--font-serif), serif',
-                fontWeight: 300,
-                fontSize: '0.9rem',
-                color: 'var(--muted)',
-                maxWidth: '280px',
-              }}
-            >
-              Currently listing {PROPERTIES.length} properties across 8 Kerala districts.
-            </p>
-          </TextReveal>
+          <div className="w-full lg:w-1/3 pt-4">
+            <TextReveal delay={0.15}>
+              <p
+                style={{
+                  fontFamily: 'var(--font-serif), serif',
+                  fontWeight: 300,
+                  fontSize: '1.1rem',
+                  lineHeight: 1.8,
+                  color: 'var(--muted)',
+                  borderLeft: '1px solid var(--line)',
+                  paddingLeft: '2rem'
+                }}
+              >
+                Currently curating {PROPERTIES.length} addresses across 8 Kerala districts. Hand-selected for architectural merit and enduring value.
+              </p>
+            </TextReveal>
+          </div>
         </div>
       </section>
 
       {/* Filters + Grid */}
-      <section className="px-6 md:px-12 pb-24">
+      <section className="px-6 md:px-[10vw] lg:px-[15vw] pb-32">
         <FilterBar
           activeType={activeType}
           activeStatus={activeStatus}

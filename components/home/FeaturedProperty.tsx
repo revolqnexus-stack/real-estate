@@ -18,17 +18,17 @@ export default function FeaturedProperty({ property }: FeaturedPropertyProps) {
     property.area,
     property.bedrooms ? `${property.bedrooms} BHK` : null,
     property.facing ? `${property.facing} Facing` : null,
-  ].filter(Boolean).join(' · ');
+  ].filter(Boolean).join(' ✧ ');
 
   return (
-    <section className="px-6 md:px-12 py-24">
+    <section className="px-6 md:px-[10vw] lg:px-[15vw] py-32">
       <TextReveal>
-        <p className="t-label mb-12" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>
-          Featured Property
+        <p className="t-label mb-16" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>
+          01 ✧ Featured Property
         </p>
       </TextReveal>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10 lg:gap-16 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-[60%_35%] gap-20 items-end">
         {/* Image */}
         <ImageReveal
           src={property.heroImage}

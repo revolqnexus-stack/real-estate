@@ -24,7 +24,7 @@ export default function HomePage() {
       <Marquee />
 
       {/* Property Grid Preview */}
-      <section className="px-6 md:px-12 py-16 pb-24">
+      <section className="px-6 md:px-[10vw] lg:px-[15vw] py-16 pb-24">
         <div className="flex justify-between items-baseline mb-12">
           <TextReveal>
             <p className="t-label" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>

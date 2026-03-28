@@ -25,7 +25,7 @@ const TESTIMONIALS = [
  */
 export default function TestimonialsSection() {
   return (
-    <section className="px-6 md:px-12 py-32">
+    <section className="px-6 md:px-[10vw] lg:px-[15vw] py-32">
       <TextReveal>
         <p className="t-label mb-4" style={{ letterSpacing: '0.45em', fontSize: '0.62rem' }}>
           Client Stories

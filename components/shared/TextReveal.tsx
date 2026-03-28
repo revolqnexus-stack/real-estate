@@ -10,7 +10,7 @@ interface TextRevealProps {
   as?: 'div' | 'span' | 'p' | 'h1' | 'h2' | 'h3';
 }
 
-const EASE = [0.25, 0, 0, 1] as const;
+const EASE = [0.21, 0.6, 0.35, 1] as const;
 
 /**
  * Fade + rise text reveal triggered by scroll intersection.
@@ -31,9 +31,9 @@ export default function TextReveal({
     <Component
       ref={ref}
       className={className}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : undefined}
-      transition={{ duration: 0.8, ease: EASE, delay }}
+      transition={{ duration: 1.0, ease: EASE, delay }}
     >
       {children}
     </Component>

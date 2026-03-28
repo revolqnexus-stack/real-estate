@@ -14,11 +14,11 @@ interface ImageRevealProps {
   sizes?: string;
 }
 
-const EASE = [0.25, 0, 0, 1] as const;
+const EASE = [0.21, 0.6, 0.35, 1] as const;
 
 /**
  * Scroll-triggered image reveal using Framer Motion clip-path animation.
- * Inner image scales down from 1.08 as the clip-path opens.
+ * Inner image scales down from 1.15 as the clip-path opens slowly.
  */
 export default function ImageReveal({
   src,
@@ -41,13 +41,13 @@ export default function ImageReveal({
         className="absolute inset-0"
         initial={{ clipPath: 'inset(100% 0% 0% 0%)' }}
         animate={isInView ? { clipPath: 'inset(0% 0% 0% 0%)' } : undefined}
-        transition={{ duration: 1.2, ease: EASE }}
+        transition={{ duration: 1.4, ease: EASE }}
       >
         <motion.div
           className="relative w-full h-full"
-          initial={{ scale: 1.08 }}
+          initial={{ scale: 1.15 }}
           animate={isInView ? { scale: 1 } : undefined}
-          transition={{ duration: 1.4, ease: EASE }}
+          transition={{ duration: 1.6, ease: EASE }}
         >
           <Image
             src={src}

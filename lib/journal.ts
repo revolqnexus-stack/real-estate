@@ -7,7 +7,7 @@ export const JOURNAL_POSTS: JournalPost[] = [
     date: 'March 2025',
     category: 'Market Insight',
     readTime: '4 min read',
-    heroImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6d349c58?auto=format&fit=crop&w=800&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6d349c58?auto=format&fit=crop&w=3840&q=90',
     excerpt: 'The orientation of a home affects more than morning light. We explore the cultural and practical reasons behind Kerala\'s enduring preference.',
     content: `The orientation of a house is often as important as its location or its architecture. Among all orientations, East-facing properties consistently command a premium. But why?
 
@@ -33,7 +33,7 @@ Because of these reasons, the demand for East-facing plots and homes far outstri
     date: 'February 2025',
     category: 'Living',
     readTime: '6 min read',
-    heroImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=3840&q=90',
     excerpt: 'A tharavad from 1912. The story of how we matched a family to a home that had waited decades for the right owners.',
     content: `There is a soul in an old house that a new construction can never replicate. In Kerala, our traditional Tharavads are not just buildings — they are repositories of history, culture, and family stories.
 
@@ -55,7 +55,7 @@ The most successful heritage restorations are those that integrate modern comfor
     date: 'January 2025',
     category: 'Design',
     readTime: '5 min read',
-    heroImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=3840&q=90',
     excerpt: 'Privacy, natural light, and proximity to nature are replacing gym and pool as primary luxury signals in Kerala real estate.',
     content: `The definition of luxury is shifting. For the modern Kerala buyer, "more" is no longer better. "Better" is better.
 
@@ -77,12 +77,10 @@ The most telling shift: buyers no longer want their luxury to be visible. Gone a
   },
 ];
 
-/** Get a single journal post by slug */
 export function getPostBySlug(slug: string): JournalPost | undefined {
   return JOURNAL_POSTS.find((p) => p.slug === slug);
 }
 
-/** Get all journal slugs for static generation */
 export function getAllPostSlugs(): string[] {
   return JOURNAL_POSTS.map((p) => p.slug);
 }
